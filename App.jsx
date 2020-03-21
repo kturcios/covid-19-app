@@ -235,13 +235,14 @@ export default function App() {
                     }
                   }}
                   onClose={() => {
-                    if (selectedCountry !== '' || selectedCountry !== null) {
+                    if (selectedCountry !== '' && selectedCountry !== null) {
                       setFilter({
                         by: 'Country',
                         country: selectedCountry,
                         state: '',
                       });
                       navigation.navigate('Home');
+                      setSelectedCountry('');
                     }
                   }}
                   items={countries}
